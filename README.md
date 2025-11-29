@@ -1,4 +1,4 @@
-# MeuCrud
+# Crud_Simple_Graphical_Interface
  Meu primeiro CRUD usando a linguagem python. Este CRUD é interligado a uma interface gráfica chamada PySimpleGUI.
 
  Faça o download dos pacotes dentro do 'requimrements.txt';

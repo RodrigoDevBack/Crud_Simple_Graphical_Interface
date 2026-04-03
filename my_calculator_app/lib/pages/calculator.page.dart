@@ -36,6 +36,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
         ].contains(displayNumber.substring((displayNumber.length - 1))))) {
           return;
         }
+      } else if (displayNumber.isEmpty){
+        return;
       }
 
       displayNumber += newType.symbol;
@@ -155,6 +157,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
     String expression = displayNumber.replaceAll(',', '.');
     List<double> numbers = parseNumbers(expression);
     List<OperationTypeEnum> operators = parseOperators(expression);
+
+    if (numbers.length == 1 && operators.length == 1) {
+      return;
+    }
 
     resolvePriorityOperation(numbers, operators);
     final result = resolveAditionAndSubtraction(numbers, operators);
